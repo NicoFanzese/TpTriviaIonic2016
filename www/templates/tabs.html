@@ -1,0 +1,32 @@
+<script type="text/javascript">
+function iniciar(){
+    document.getElementById("Tecnologia").style.display='inline'; 
+    document.getElementById("Diseño").style.display='none';
+    document.getElementById("Beneficio").style.display='none';
+    document.getElementById("Login").style.display='none';
+    document.getElementById("IntegracionConSitio").style.display='none';       
+    document.getElementById("PanelAdministracion").style.display='none';      
+    document.getElementById("Resumen").style.display='none';         
+  }
+</script>
+
+<ion-tabs class="tabs-striped tabs-background-positive tabs-color-light">
+
+<!--   <ion-tab title="Login" icon-off="icon ion-unlocked" icon-on="icon ion-unlocked" href="#/tab/login">
+    <ion-nav-view name="tab-login"></ion-nav-view>
+  </ion-tab> 
+ -->
+  <!-- <ion-tab title="Contacto" icon-off="icon ion-person-stalker" icon-on="icon ion-person-stalker" href="#/tab/contacto">
+    <ion-nav-view name="tab-contacto"></ion-nav-view>
+  </ion-tab> 
+ -->
+  <ion-tab title="Cotizador Online" icon-off="icon ion-stats-bars" icon-on="icon ion-stats-bars" onLoad="iniciar()" href="#/tab/trivia">
+    <ion-nav-view name="tab-trivia"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Log out" icon-off="icon ion-locked" icon-on="icon ion-locked" href="#/login">
+    <ion-nav-view name="login"></ion-nav-view>
+  </ion-tab>
+  
+
+</ion-tabs>
