@@ -1,0 +1,178 @@
+<script language="javascript" type="text/javascript">
+  function esconde(obj){
+    //iPhone.disabled=true;
+    if (document.getElementById("Indesingente").style.display != 'none'){
+       document.getElementById("Indesingente").style.display='none';
+       document.getElementById("Campeon").style.display='inline';
+       
+       if (obj.id == "unoUno"){
+          resumen += " <b>¿En qué año se fue a la B Independiente?: </b> 15 de junio de 2013<br>" ;          
+       }else if (obj.id == "dosUno"){
+          resumen += " <b>¿En qué año se fue a la B Independiente?: </b> 25 de Enero de 2014<br>";          
+       }else if (obj.id == "tresUno"){
+          resumen += " <b>¿En qué año se fue a la B Independiente?: </b> 8 de Agosto de 2013<br>";          
+       }       
+
+    }else if (document.getElementById("Campeon").style.display != 'none'){
+       document.getElementById("Campeon").style.display='none';
+       document.getElementById("Arañazo").style.display='inline';
+
+        if (obj.id == "unoDos"){
+           resumen += " <b>Campeón del Torneo de Primera División Dr. Ramón Carrillo: </b> Independiente<br>";
+           cantHs += 40;
+        }else if(obj.id == "dosDos"){
+           resumen += " <b>Campeón del Torneo de Primera División Dr. Ramón Carrillo: </b> River<br>";
+           cantHs += 20;
+        }else if(obj.id == "tresDos"){
+           resumen += " <b>Campeón del Torneo de Primera División Dr. Ramón Carrillo: </b> Racing<br>";
+           cantHs += 10;
+        }
+      
+    }else if (document.getElementById("Arañazo").style.display != 'none'){
+       //document.getElementById("arañazo").style.display='none';
+
+        if (obj.id == "unoTres"){
+           resumen += " <b>Jugador que arañó a Abondancieri: </b> 'La Gata' fernandez<br>";
+           cantHs += 40;
+        }else if(obj.id == "dosTres"){
+           resumen += " <b>Jugador que arañó a Abondancieri: </b> 'El muñeco' Gallardo<br>";
+           cantHs += 20;
+        }else if(obj.id == "tresTres"){
+           resumen += " <b>Jugador que arañó a Abondancieri: </b> 'El Caco' Centurión<br>";
+           cantHs += 10;
+        }
+      
+    }  
+  }
+
+  function jugar(){    
+    resumen = '';
+    cantHs = 0;
+    document.getElementById("Indesingente").style.display='inline';  
+    document.getElementById("Arañazo").style.display='none';            
+  }  
+
+</script>
+
+<ion-view view-title="Unidad Mobile" onLoad="iniciar()">
+  <ion-content has-header="true" padding="true">
+ 
+
+  <div id="Indesingente">
+  <center>
+    <br>
+    <h2>Trivia</h2>
+    <br>
+    <b>¿En qué año se fue a la B Independiente?</b>
+    <br>
+    <br> 
+    <table border="2px" width="100%">
+      <tr>
+        <td width="30%">
+        <div>
+         <center>
+           <input src="img/uno.jpg" type=image  id="unoUno" onClick="esconde(this)" ></input>
+            <br>
+           <small>15 de junio de 2013</small> 
+         </center>    
+         </input>    
+        </td>      
+        <td width="30%">
+          <center>
+            <input src="img/dos.jpg" type=image id="dosUno" onClick="esconde(this)">
+            </input>
+            <br>
+            <small>25 de Enero de 2014</small>     
+          </center>
+        </td>
+        <td width="30%">
+          <center>
+            <input src="img/tres.jpg" type=image id="tresUno" onClick="esconde(this)">
+            </input>
+            <br>
+            <small>8 de Agosto de 2013</small>     
+          </center>
+        </td>
+      </tr>    
+    </table>
+  </center>
+  </div>
+
+<div id="Campeon" style="display:none">
+  <center>
+    <br>
+    <h2>Trivia</h2>
+    <br>
+    <b>Campeón del Torneo de Primera División "Dr. Ramón Carrillo" </b>
+    <br>
+    <br>    
+    <table border="2px" width="100%">
+      <tr>
+        <td width="30%">
+         <center>
+           <input src="img/uno.jpg" type=image id="unoDos" onClick="esconde(this)" ></input>
+           <br>
+           <small>Independiente</small>
+         </center>        
+        </td>
+
+        <td width="30%">
+          <center>
+            <input src="img/dos.jpg" type=image id="dosDos" onClick="esconde(this)"></input>
+            <br>
+            <small>River</small>        
+          </center>
+        </td>
+
+         <td width="30%">
+          <center>
+            <input src="img/tres.jpg" type=image id="tresDos" onClick="esconde(this)"></input>
+            <br>
+            <small>Racing</small>
+          </center>
+        </td>
+      </tr>    
+    </table>
+  </center>
+  </div>
+
+<div id="Arañazo" style="display:none">
+  <center>
+    <br>
+    <h2>Trivia</h2>
+    <br>
+    <b>Jugador que arañó a Abondancieri </b>
+    <br>
+    <br>    
+    <table border="2px" width="100%">
+      <tr>
+        <td width="30%">
+         <center>
+           <input src="img/uno.jpg" type=image id="unoTres" onClick="esconde(this)" ></input>
+           <br>
+           <small>"La Gata" fernandez</small>
+         </center>        
+        </td>
+
+        <td width="30%">
+          <center>
+            <input src="img/dos.jpg" type=image id="dosTres" onClick="esconde(this)"></input>
+            <br>
+            <small>"El muñeco" Gallardo</small>        
+          </center>
+        </td>
+
+         <td width="30%">
+          <center>
+            <input src="img/tres.jpg" type=image id="tresTres" onClick="esconde(this)"></input>
+            <br>
+            <small>"El Caco" Centurión</small>
+          </center>
+        </td>
+      </tr>    
+    </table>
+  </center>
+  </div>
+
+  </ion-content>
+</ion-view>
