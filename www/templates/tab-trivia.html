@@ -6,11 +6,12 @@
        document.getElementById("Campeon").style.display='inline';
        
        if (obj.id == "unoUno"){
-          resumen += " <b>¿En qué año se fue a la B Independiente?: </b> 15 de junio de 2013<br>" ;          
+          resumen += " <b>¿En qué año se fue a la B Independiente?: </b> 15 de junio de 2013<br>" ; 
+          acierto += 1;        
        }else if (obj.id == "dosUno"){
           resumen += " <b>¿En qué año se fue a la B Independiente?: </b> 25 de Enero de 2014<br>";          
        }else if (obj.id == "tresUno"){
-          resumen += " <b>¿En qué año se fue a la B Independiente?: </b> 8 de Agosto de 2013<br>";          
+          resumen += " <b>¿En qué año se fue a la B Independiente?: </b> 8 de Agosto de 2013<br>";                    
        }       
 
     }else if (document.getElementById("Campeon").style.display != 'none'){
@@ -19,37 +20,39 @@
 
         if (obj.id == "unoDos"){
            resumen += " <b>Campeón del Torneo de Primera División Dr. Ramón Carrillo: </b> Independiente<br>";
-           cantHs += 40;
         }else if(obj.id == "dosDos"){
            resumen += " <b>Campeón del Torneo de Primera División Dr. Ramón Carrillo: </b> River<br>";
-           cantHs += 20;
         }else if(obj.id == "tresDos"){
            resumen += " <b>Campeón del Torneo de Primera División Dr. Ramón Carrillo: </b> Racing<br>";
-           cantHs += 10;
+           acierto += 1;
         }
       
     }else if (document.getElementById("Arañazo").style.display != 'none'){
-       //document.getElementById("arañazo").style.display='none';
+       document.getElementById("Arañazo").style.display='none';
+       document.getElementById("Resumen").style.display='inline'; 
 
         if (obj.id == "unoTres"){
-           resumen += " <b>Jugador que arañó a Abondancieri: </b> 'La Gata' fernandez<br>";
-           cantHs += 40;
+           resumen += " <b>Jugador que arañó a Abbondanzieri: </b> 'La Gata' fernandez<br>";           
         }else if(obj.id == "dosTres"){
-           resumen += " <b>Jugador que arañó a Abondancieri: </b> 'El muñeco' Gallardo<br>";
-           cantHs += 20;
+           resumen += " <b>Jugador que arañó a Abbondanzieri: </b> 'El muñeco' Gallardo<br>";
+           acierto += 1;
         }else if(obj.id == "tresTres"){
-           resumen += " <b>Jugador que arañó a Abondancieri: </b> 'El Caco' Centurión<br>";
-           cantHs += 10;
+           resumen += " <b>Jugador que arañó a Abbondanzieri: </b> 'El Caco' Centurión<br>";
         }
+         document.getElementById('Resultado').innerHTML = resumen; 
+         document.getElementById('Total').innerHTML = acierto + " / 3"; 
       
-    }  
+    }
+
   }
 
   function jugar(){    
     resumen = '';
-    cantHs = 0;
+    acierto = 0;
     document.getElementById("Indesingente").style.display='inline';  
-    document.getElementById("Arañazo").style.display='none';            
+    document.getElementById("Campeon").style.display='none';
+    document.getElementById("Arañazo").style.display='none';    
+    document.getElementById("Resumen").style.display='none';         
   }  
 
 </script>
@@ -141,7 +144,7 @@
     <br>
     <h2>Trivia</h2>
     <br>
-    <b>Jugador que arañó a Abondancieri </b>
+    <b>Jugador que arañó a Abbondanzieri </b>
     <br>
     <br>    
     <table border="2px" width="100%">
@@ -173,6 +176,40 @@
     </table>
   </center>
   </div>
+
+  <div id="Resumen" style="display:none">
+  <center>
+    <br>
+    <h2>Trivia</h2>
+    <br>       
+    <table border="2px">
+      <tr>
+        <td width=450>
+         <center>
+          <h2>Resultado</h2>          
+          <label id="Resultado"></label>
+          <br>  
+          <h2>Total de preguntas acertadas</h2>          
+          <label id="Total"></label>
+         </center>        
+        </td>
+      </tr> 
+      <tr> 
+        <td width=150>      
+          <center>
+            <br>
+            <input type=image src="img/jugar.jpg" width="120" height="100" onClick="jugar(this)">
+            <br>            
+            <b><h3>Jugar nuevamente</h3></b>          
+          </center>
+        </td>     
+
+      </tr>    
+    </table>
+  </center>
+  </div>
+
+
 
   </ion-content>
 </ion-view>
